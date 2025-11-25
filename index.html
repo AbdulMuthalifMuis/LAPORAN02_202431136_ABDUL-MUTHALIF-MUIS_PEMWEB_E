@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LAPORAN PRAKTIKUM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" id="app">
+    <header class="card title">
+      <div>
+        <h1>LAPORAN PRAKTIKUM</h1>
+        <h2>Abdul Muthalif Muis</h2>
+        <h2>202431136</h2>
+      </div>
+ 
+      <div class="controls">
+    <button class="btn" id="btnToggleMode">Mode Berantakan</button>
+  </div>
+    </header>
+
+    <main class="grid">
+      <section class="card col">
+        <div class="two-col">
+          <div class="col">
+            <article class="card">
+              <h3 tabindex="0">a. Mengapa menggunakan CSS dan JavaScript dalam pemrograman web modern?</h3>
+              <div class="content">
+                <p class="answer">CSS dan JavaScript digunakan dalam pemrograman web modern untuk memisahkan struktur (HTML), presentasi (CSS), dan fungsionalitas (JavaScript). CSS menangani tampilan visual agar menarik dan responsif, sementara JavaScript menambahkan interaktivitas dan membuat halaman web dinamis. Kombinasi ketiganya menciptakan pengalaman pengguna yang kaya dan lengkap.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3 tabindex="0">b. Jelaskan konsep dan tujuan utama dari Responsive Web Design (RWD)!</h3>
+              <div class="content">
+                <p class="answer">Konsep Responsive Web Design (RWD) adalah merancang satu situs web yang dapat beradaptasi tampilannya secara otomatis di berbagai ukuran layar dan perangkat, mulai dari desktop hingga smartphone. Tujuan utamanya adalah menciptakan pengalaman pengguna (UX) yang optimal dan konsisten, dengan menyediakan kemudahan akses, pembacaan, dan navigasi tanpa perlu membuat versi situs yang berbeda untuk setiap perangkat.</p>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3 tabindex="0">c. Bagaimana kombinasi CSS, JavaScript, dan prinsip RWD</h3>
+              <div class="content">
+                <p class="answer">CSS, JavaScript, dan prinsip Responsive Web Design (RWD) bekerja bersama untuk menciptakan halaman web yang menarik, interaktif, dan nyaman di semua perangkat. CSS mengatur tampilan visual serta responsivitas dasar melalui layout fleksibel dan media queries, sementara JavaScript menambahkan interaksi seperti animasi, validasi, atau toggle menu pada layar kecil. Prinsip RWD memastikan seluruh elemen — termasuk teks, gambar, dan struktur — dapat menyesuaikan ukuran layar secara otomatis. Ketiganya saling melengkapi: CSS menentukan gaya, JavaScript memberi fungsi dinamis, dan RWD menjadi panduan agar tampilan tetap optimal di mobile, tablet, hingga desktop.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+ <script>
+  // Klik judul untuk sembunyikan/ tampilkan konten
+  document.querySelectorAll('h3').forEach(h3 => {
+    h3.addEventListener('click', () => {
+      const content = h3.nextElementSibling;
+      if (!content) return;
+      if (confirm('Sembunyikan konten ini?')) content.classList.add('hidden');
+      else content.classList.remove('hidden');
+    });
+  });
+
+  const btnToggleMode = document.getElementById('btnToggleMode');
+
+  // Berfungsi untuk toggle mode
+  btnToggleMode.onclick = () => {
+    document.body.classList.toggle('mode-berantakan');
+
+    // Untuk mengubah teks tombol sesuai mode
+    if (document.body.classList.contains('mode-berantakan')) {
+      btnToggleMode.textContent = 'Mode Rapi';
+    } else {
+      btnToggleMode.textContent = 'Mode Berantakan';
+    }
+  };
+</script>
+</body>
+</html>
